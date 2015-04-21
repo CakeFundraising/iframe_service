@@ -1,4 +1,4 @@
-Cake ?= {}
+window.Cake ?= {}
 Cake.Iframe ?= {}
 
 Cake.Iframe.badges ?= {}

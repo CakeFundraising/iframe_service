@@ -1,10 +1,8 @@
 class PledgeDecorator < ApplicationDecorator
   delegate_all
   decorates_association :campaign
-  decorates_association :invoice
   decorates_association :sponsor
   decorates_association :fundraiser
-  decorates_association :video
   decorates_association :picture
   
   def to_s

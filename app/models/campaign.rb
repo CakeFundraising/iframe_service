@@ -1,8 +1,15 @@
 class Campaign < ActiveRecord::Base
   include Picturable
+  include Statusable
+
+  has_statuses :incomplete, :pending, :launched, :past
+  has_statuses :unprocessed, :missed_launch, column_name: :processed_status
 
   belongs_to :fundraiser
   has_many :pledges
+  has_many :direct_donations, as: :donable
+
+  monetize :goal_cents
   
   def accepted_pledges
     pledges.accepted.order(total_amount_cents: :desc, amount_per_click_cents: :desc)

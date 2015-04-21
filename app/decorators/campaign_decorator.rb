@@ -1,11 +1,7 @@
 class CampaignDecorator < ApplicationDecorator
-  include AnalyticsDecorator
-
   delegate_all
-  decorates_association :video
   decorates_association :fundraiser
   decorates_association :picture
-  decorates_association :sponsor_categories
 
   def class_name
     object.class.name

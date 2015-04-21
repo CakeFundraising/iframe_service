@@ -1,9 +1,18 @@
 class Pledge < ActiveRecord::Base
   include Picturable
+  include Statusable
+
+  has_statuses :incomplete, :pending, :accepted, :rejected, :past
+  has_statuses :unprocessed, :notified_fully_subscribed, column_name: :processed_status
   
   belongs_to :campaign
   belongs_to :sponsor, polymorphic: true
   has_one :fundraiser, through: :campaign
+
+  self.inheritance_column = :_type_disabled
+
+  monetize :amount_per_click_cents
+  monetize :total_amount_cents
   
   def current_max_clicks
     (self.total_amount_cents/self.amount_per_click_cents).floor
