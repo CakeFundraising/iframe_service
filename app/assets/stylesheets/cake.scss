@@ -1,0 +1,4083 @@
+@import 'fonts';
+@import 'variables';
+@import 'bootstrap';
+@import 'mixins';
+@import 'mixins-buttons';
+
+//Grid Layout ----------------------------------------------------------------------------
+/* centered columns styles */
+.row-centered {
+  text-align:center;
+}
+.col-centered {
+  display:inline-block;
+  float:none;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+/* break line responsive */
+.rwd-break { display: block; }
+
+html {
+  position: relative;
+  margin:0;
+  padding:0;
+  min-height: 100%;
+  min-width: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  min-width: 100%;
+}
+
+body.iframe-body{
+  overflow: hidden;
+}
+
+.tab-pane.tab-pane-remote{
+  background: image-url("loading.gif") no-repeat center;
+  min-height: 150px;
+}
+
+iframe{
+  border: none;
+}
+
+// Footer Styles ---------------------------------------------------------------
+
+.bottom_section {
+  margin-bottom: -100px;
+}
+
+footer {
+  position: absolute;
+  margin-top: 100px;
+  width: 100%;
+  padding: 15px 0;
+  background: $gray-darker;
+  color: $gray-lighter;
+  font-size: 14px;
+  line-height: 1.8em;
+  h4 {
+    color: $cake-green;
+    font-size: 15px;
+    padding-top: 10px;
+  }
+  ul {
+    padding-left: 0px;
+    li {
+      list-style: none;
+      a {
+        color: $gray-lighter;
+      }
+    }
+  }
+}
+
+.addthis_toolbox{
+  .at_a11y, .addthis_follow_label{
+    display:none;
+  }
+}
+
+//Typography ----------------------------------------------------------------------------
+
+h1{
+  margin-top:40px;
+}
+
+.h1{
+  @media (max-width: $screen-sm-max) {
+    font-size: 30px;
+  }
+  @media (max-width: $screen-xs-max) {
+    font-size: 26px;
+  }
+}
+
+h3{
+  @media (max-width: $screen-sm-max) {
+    font-size: 26px;
+  }
+  @media (max-width: $screen-xs-max) {
+    font-size: 22px;
+  }
+}
+
+h3, h4 {
+  color: $brand-primary;
+  &.campaign-ends{
+    color: black;
+  }
+}
+
+hr{
+  border-top: 1px dotted #dddddd;
+}
+.nav-tabs {
+  text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.blue-color{
+  color: $brand-primary;
+}
+
+//Helpers ----------------------------------------------------------------------------
+
+.ten-b {
+  margin-bottom: 10px;
+}
+.ten-t {
+  margin-top: 10px;
+}
+.twenty-t {
+  margin-top: 20px;
+}
+.error{
+  color: #a94442;
+  display: block;
+}
+.clear{
+  clear: both;
+}
+
+.page-cta {
+  margin: 20px;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+//Navbar --------------------------------------------------------------------------------
+.nav {
+  margin-top: 15px;
+}
+.navbar {
+  margin-bottom: 0;
+  background-color: #FFFFFF;
+  z-index: 1;
+  .form-control{
+    height: 34px;
+    text-transform: capitalize;
+  }
+}
+
+.navbar-form{
+  margin-left: 10px;
+  border-left: 1px solid #000000;
+  padding-left: 30px;
+}
+
+.navbar-brand {
+  padding-top: 13px;
+  img{
+    width:120px;
+  }
+}
+.user-logged-in {
+  span {
+    margin-left: 5px;
+  }
+  .glyphicon {
+    top: 2px;
+  }
+}
+.navbar-nav{
+  margin: 10px 0px 10px -1px !important;
+}
+.navbar-nav a{
+  border-radius: 5px;
+}
+.navbar-collapse{
+  max-height: 1000px;
+}
+
+.nav-cta{
+  margin-top: 15px;
+  margin-bottom: 0;
+  background-color: #FFFFFF;
+  margin: 0px 0px 0px -1px !important;
+  padding-left: 0;
+  list-style: none;
+  li {
+    position: relative;
+    display: block;
+    a{
+      color: #777777;
+      position: relative;
+      display: block;
+      line-height: 20px;
+      padding: 10px 15px;
+    }
+    a:hover{
+      text-decoration: none !important;
+    }
+  }
+}
+
+.campaign-nav {
+
+  ul.nav.nav-pills {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border: 1px solid #f1f1f1;
+    border-radius: 15px;
+    li{
+      padding:0 5px;
+    }
+  }
+}
+
+.screenshot{
+  height:290px;
+  overflow: auto;  
+}
+
+//Media Responsive -------------------------------------------------------------------------------
+
+.container{
+  max-width: 1200px;
+  min-width: 260px;
+}
+
+.navbar-text{
+  padding: 0px 2px;
+  margin-top: 15px;
+}
+
+.navbar-right .btn{
+  margin-top: 13px !important;
+}
+
+.btn-signup {
+  margin: 4px 0px 0px 10px !important;
+  padding: 10px 20px !important;
+  color: #fff !important;
+}
+
+.btn-left{
+  margin-left: 10px !important;
+}
+
+@media (max-width: 420px){
+  #main-container {
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main-home {
+    margin-top: 0px !important;
+    
+    .search-form {
+      margin-bottom: 15px !important;
+      margin: 5px;
+    }
+
+    #pop-campaigns .panel-group, #pop-sponsors .panel-group, #pop-coupons .panel-group{
+      display:none;
+    }
+  }
+
+  .campaigns-container {
+    margin-top:10px;
+  }
+
+  .popular > li > a{
+    min-width:90px !important;
+  }
+  
+  .navbar{
+    z-index: 1000;
+    width: 100%;
+  }
+}
+
+@media (max-width: 570px){
+  .nav-tabs{
+    font-size: 11px;
+    a{
+      padding: 9px 7px !important;
+    }
+  }
+
+  .popular > li{
+      margin:10px 2px !important;
+      font-size: .8em !important;
+      a {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        padding: 10px 0px !important;
+        min-width:90px !important;
+      }
+    }
+}
+
+
+@media (max-width: 620px){
+    .navbar-text{
+      display:none;
+    }
+    .secondary-navbar{
+      margin:0px !important;
+      .col-md-12 {
+       padding:0px !important;
+      }
+    }
+    .main-home{
+      margin-top: 20px;
+    }
+    .hero-home{
+      .slide1, .slide2, .slide3{
+        height:260px !important;
+      }
+      .cta h1{
+        font-size: 38px;
+      }
+    }
+    .button-wrap{
+      display:none;
+    }
+
+    #tab-campaigns span, 
+    #tab-sponsors span,
+    #tab-fundraisers span,
+    #tab-coupons span{
+      display: none;
+    }
+    #tab-campaigns:after{
+      content: "Campaigns";
+    }
+    #tab-sponsors:after{
+      content: "Sponsors";
+    }
+    #tab-fundraisers:after{
+      content: "Causes";
+    }
+    #tab-coupons:after{
+      content: "Coupons";
+    }
+
+    #main-container{
+
+    }
+    .rank-rows{
+      .boldest{
+        display:block !important;
+      }
+      .pull-right{
+        float:none !important;
+      }
+    }
+    .media{
+      img{
+        /*max-width: 305px;*/
+      }
+      .btn{
+        padding: 10px 20px !important;
+      }
+      .pull-right{
+        float:none !important;
+        margin:auto 0 !important;
+      }
+      .media-body{
+        float: left !important;
+        margin-top: 20px;
+      }
+    }
+    .active-campaigns{
+      .pull-right{
+        float:none !important;
+      }
+    }
+    .pad-top{
+      margin-top: 15px !important;
+    }
+}
+
+@media (max-width: 767px){
+  .navbar-brand {
+    padding-top: 8px;
+    img{
+      width: 90px;
+      padding-top: 0px;
+    }
+  }
+  .btn-signup.btn-success{
+    display:block;
+  }
+}
+@media (min-width: 768px){
+  .btn-signup.btn-success{
+    display:none;
+  }
+}
+
+@media (min-width: 935px){
+  .btn-signup.btn-success{
+    display:block;
+  }
+}
+
+
+@media (min-width: 768px){
+  .container{
+    width:auto !important;
+  }
+  .nav-cta{
+    float:left;
+    li {
+      float: left;
+      a{
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
+
+p.signup-social span:before, p.signup-social span:after {
+  width: 70% !important;
+}
+
+.media{
+  .media-block{
+    margin-top:20px;
+  }
+}
+
+.cats{
+  h4{
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+}
+
+.search-form {
+  input{
+    height:auto;
+  }
+}
+
+.modal-title{
+  color: black;
+  h3{
+    color: black;
+  }
+}
+
+//Buttons -------------------------------------------------------------------------------
+
+.btn-block {
+  width: auto !important;
+}
+
+.btn-purple{
+  background-color: #59368e;
+  border: 1px solid #4B2E76;
+  color: white;
+  &:hover{
+    color: white;
+  }
+}
+
+.btn-transparent-light{
+  background: rgba(255,255,255,0.1);
+  border: 1px solid;
+  &:hover{
+    border: 1px solid $link-color;
+    color: $link-color;
+    background: none;
+  }
+}
+
+.pagination{
+  float: right;
+  padding-right: 20px;
+}
+
+.btn-search{
+  padding:6px 15px !important;
+  margin-left:4px !important;
+  color: #333333;
+  background-color: whitesmoke;
+  border-color: #dddddd !important;
+  border-width:1px;
+}
+
+.main-cta{
+  margin-bottom:15px;
+
+  &.ended_campaign{
+    font-size: 20px;
+    margin: 0px 0px 20px 0px;
+  }
+}
+
+.btn-xl{
+  padding: 15px 0px !important;
+  width: 100% !important;
+  font-size: 22px !important;
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 19px !important;;
+  }
+  @media (max-width: $screen-xs-max) {
+    font-size: 16px !important;;
+  }
+
+  &.click_link{
+    font-size: 30px !important;
+    text-transform: uppercase;
+    padding: 10px 0px !important;
+    font-weight: bold;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 26px !important;;
+    }
+    @media (max-width: $screen-xs-max) {
+      font-size: 24px !important;;
+    }
+  }
+}
+.btn-lg{
+  padding: 10px 50px !important;
+  font-size: 20px;
+  font-family: "museo_sans500", Helvetica, Arial, sans-serif;
+}
+
+.btn-md{
+  font-family: "museo_sans500", Helvetica, Arial, sans-serif;
+  padding: 10px 25px !important;
+  font-size: 15px;
+}
+
+.btn-sm{
+  /*padding: 3px 6px !important;
+  font-size: 11px !important;
+  font-family: "museo_sans500", Helvetica, Arial, sans-serif;
+
+  */
+  margin:2px;
+}
+
+.panel-default {
+  background-color:#fff !important;
+  margin-top: 20px;
+  margin-bottom: 5px;
+
+  .container-fluid{
+    margin-left:0px;
+    margin-right:0px;
+    padding-left:0px;
+    padding-right:0px;
+  }
+
+  .data-table{
+    margin:0px !important;
+  }
+
+  .panel-title-right{
+    float:right;
+    margin:0px;
+    margin-right: 0px;
+    .stat {
+      display: inline-block;
+      margin: 10px 10px 5px 30px;
+      text-align: center;
+      border-left: 1px solid #cccccc;
+      padding-left: 50px;
+      span{
+
+      }
+      a{
+        margin: 2px;
+      }
+      p{
+        margin:0px;
+        color:#555555;
+      }
+    }
+  }
+
+  .panel-heading{
+    padding: 0px 5px;
+    background-color:#fff !important;
+    color:#555555 !important;
+    display:inline-block;
+    width: 100%;
+  }
+
+  h4{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .search-panel{
+    ul{
+      li{
+        padding: 0px !important;
+      }
+    }
+  }
+
+  .search-panel-title{
+    margin: 10px 0px 5px 5px;
+    float: left;
+    color: #555555;
+    font-family: "museo_sans500", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+  .panel-title{
+    margin: 17px 0px 0px 15px;
+    float: left;
+    color: #555555;
+    font-family: "museo_sans500", Helvetica, Arial, sans-serif;
+  }
+}
+
+.shared-links{
+  text-align:left;
+  margin-top:20px;
+}
+
+// -------------------------------------------------------------------------------
+form{
+  .banner{
+    overflow: hidden;
+    width: 342px;
+    height: 150px;
+  }
+}
+
+.form-control{
+  height: 40px;
+}
+
+.input-group{
+  .col-xs-3{
+    padding-left: 0;
+  }
+}
+
+.help-block {
+  font-size: 12px;
+}
+
+// Progress Bar Styles ---------------------------------------------------------------
+
+.progress {
+  height: 12px;
+  margin: 10px 5px 5px 5px;
+  border-radius: 10px;
+}
+
+.Colophon {
+  border-top: 1px dotted $gray-lighter;
+  padding-top: 10px;
+  margin-top: 30px;
+}
+// Register - Choose Styles ------------------------------------------------------------------
+.choose-role {
+  padding: 20px 0;
+}
+.fundraisers-cir {
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  color: #fff;
+  padding: 40px 15px;
+  margin: 0 auto;
+  background-color: $brand-success;
+  border-radius: 500px;
+  border: 7px solid rgba(0,0,0,.1);
+  margin-bottom: 25px;
+}
+.sponsors-cir {
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  color: #fff;
+  padding: 40px 15px;
+  margin: 0 auto;
+  background-color: $brand-primary;
+  border-radius: 500px;
+  border: 7px solid rgba(0,0,0,.1);
+}
+.start-now-btn {
+  border: 1px solid white;
+  margin-top: 0px;
+}
+.divider-vert {
+  border-right: 1px dotted $gray-light;
+  @media (max-width: $screen-md-min) {
+    border: none;
+    margin: 0 auto 50px;
+  }
+}
+.explore {
+  margin: 25px auto;
+}
+
+// Sign Up Styles ------------------------------------------------------------------
+
+.form-wrap {
+  max-width: 400px;
+  padding: 20px 0;
+}
+
+.signup-wrap {
+  padding: 0 9%;
+  color: $text-color-light;
+  margin: auto;
+  text-align: center;
+  p {
+    font-size: 14px;
+    font-style: italic;
+    color: $text-color-light;
+    margin-top: -35px;
+    background-color: $body-bg;
+    padding: 0 15px;
+    display: inline-block;
+    position: relative;
+  }
+}
+.providers {
+  a {
+    display: block;
+    margin: 0 auto 10px;
+  }
+}
+
+.inputs > legend {
+  color: $text-color-light;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  border: none;
+  margin-bottom: 20px;
+  width:100%;
+
+  &:before {
+    border-top: 1px solid #dfdfdf;
+    content:"";
+    position: absolute;
+    top: 9px;
+    right: 15%;
+    bottom: 0;
+    width: 70%;
+    height: 10px;
+  }
+  span {
+    position: relative;
+    background-color: $main-background;
+    padding: 15px;
+  } 
+}
+
+p.signup-social {
+  color: $text-color-light;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 40px;
+  width:100%;
+
+  @media (max-width: $screen-md-min) {
+    margin-top: 40px;
+  }
+
+  &:before {
+      border-top: 1px solid #dfdfdf;
+      content: "";
+      position: absolute;
+      top: 9px;
+      right: 0%;
+      bottom: 0;
+      width: 100%;
+    }
+  span {
+    position: relative;
+    background-color: $main-background;
+    padding: 15px;
+  } 
+}
+
+// Sign In Styles ------------------------------------------------------------------
+.sign-in-social {
+  margin-top: 25px;
+}
+.inputs {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+// Fundraiser & Sponsor Dashboard Styles --------------------------------------------------------
+// (note: all fr-xxx classes are also used for sponsor dash styles, 
+//  fr was just completed first,)
+
+.fr-dash {
+  margin:20px 0;
+}
+.fr-dash-avatar {
+  width: 200px;
+  height: auto;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+
+  .img-thumbnail{
+    width:100%;
+  }
+}
+.media-heading {
+  color: $gray-dark;
+  font-size: 22px;
+}
+.fr-name {
+  color: $brand-primary;
+}
+.link-stripe-account {
+  font-style: italic;
+  font-size: 12px;
+  color: $gray-light;
+  padding-top: 5px;
+}
+.fr-manager-email {
+  margin-bottom: 8px;
+}
+.fr-manager-email-edit {
+  padding-left: 5px;
+}
+.dash-head {
+  padding: 10px 0px 0px;
+  display: inline-block;
+}
+
+h1 span {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.page-cta {
+  /* margin: 20px; */
+  float: left;
+  display: inline;
+  margin: -2px;
+  padding: 0px;
+}
+
+#search_sponsors{
+  margin-bottom:40px;
+}
+
+.counter {
+  margin: 25px 0px 5px 5px;
+}
+
+.active-campaigns {
+  /*margin: 20px 0 10px;*/
+  margin: 0px 0 10px;
+  h1 {
+    margin: 0;
+  }
+}
+.active-campaigns-fr {
+  margin: 20px 0 10px;
+  padding: 25px 0;
+  h1 {
+    margin: 0;
+  }
+}
+
+$font-size: 16px;
+$line-height: 1.4;
+$lines-to-show: 2;
+
+// Account Page Styles ------------------------------------------------------------------
+.account-wrapper {
+  border-top: 1px dotted $gray-light;
+  padding: 35px 60% 30px 25px;
+  @media (max-width: $screen-md-min) {
+    padding: 25px 50px 20px;
+  }
+}
+// Edit Profile, Email Settings Dividers ---------------------------------------------------------------
+.section-wrapper {
+  border-top: 1px dotted $gray-light;
+  padding-top: 25px;
+  margin: 35px 0;
+  @media (max-width: $screen-md-min) {
+    padding: 25px 50px 20px;
+  }
+}
+// Edit Profile Page Styles ------------------------------------------------------------------
+.pad-top {
+  margin-top: 40px;
+}
+.pad-right {
+  margin-right: 5px;
+}
+.simple-margin {
+  margin: 2px;
+}
+.edit-profile-head {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  h1 {
+    margin: 0;
+  }
+}
+#fundraiser_picture_attributes_banner_input, #sponsor_picture_attributes_banner_input {
+  .banner {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    .img-thumbnail {
+      width: 100%;
+    }
+  }
+}
+#fundraiser_picture_attributes_avatar_input, #sponsor_picture_attributes_avatar_input {
+  .avatar {
+    width: 100%;
+    height: auto;
+    /*margin-bottom: 10px;*/
+  }
+}
+.save-btn {
+  margin: 20px auto 40px;
+}
+// Profile Page Styles ------------------------------------------------------------------
+.hero {
+  height:614px;
+  margin-bottom: 0;
+  border:0px;
+  background-size: 100% auto;
+  @include background-size(cover);
+  background-position: 50% 0px;
+  .alert-dismissable {
+    font-size: 2.2em;
+    background: rgba(8, 193, 220, 0.75);
+  }
+  .green-bkg{
+    background: rgba(182, 203, 64, 0.75);
+  }
+  .close{
+    opacity: 0.7;
+  }
+}
+
+.hero-screen {
+  background-image:image-url('hero-screen.png');
+  background-repeat: repeat-x;
+  height:625px;
+}
+
+.pull-up {
+  margin-top: -270px;
+  &.pull-up-hero{
+   margin-top: -315px; 
+  }
+  &.pull-up-pledge{
+    margin-top: -315px;
+  }
+  @media (max-width: $screen-sm-max) {
+    margin-top: -330px;
+    &.pull-up-hero{
+     margin-top: -375px; 
+    }
+  }
+}
+
+.pull-left {
+  margin-right:0px !important;
+}
+
+input[type="checkbox"]{
+  float:none !important;
+}
+
+// Titles
+h1.name {
+  color: #fff;
+  display: inline-table;
+  .edit {
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    margin-top: 0;
+  }
+}
+
+.campaign-intro {
+  bottom: -265px;
+  .name {
+    color: #fff;
+    display: inline-table;
+    .edit {
+      font-size: 16px;
+      margin-left: 5px;
+      margin-top: 5px;
+    }
+  }
+  .addthis_sharing_toolbox {
+    display: table-cell;
+  }
+
+  .share-buttons {
+    float: left;
+  }
+
+  .share-info {
+    color: white;
+    padding-left: 5px;
+  }
+
+}
+
+@media (max-width: 420px){
+  .btn-lg {
+    padding: 10px 40px !important;
+  }
+}
+
+.sidebar{
+  p {
+    margin:0px;
+    text-transform: capitalize;
+  }
+}
+
+.no-border{
+  border:0px !important;
+}
+
+.no-padding{
+  padding: 0;
+}
+
+.sidebar-bkg {
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  border-radius: $border-radius-base;
+  margin-bottom: 10px;
+  /*height: 300px;*/
+  hr {
+    margin-top:10px;  
+    margin-bottom:10px;  
+  }
+  &.campaign-sidebar{
+    margin-top: -80px;
+    margin-bottom: 0;
+    box-shadow: 0px 0px 15px $gray-dark;
+    &.regular-campaign-sidebar{
+      margin-top: -100px;
+      @media (max-width: $screen-xs-max) {
+        margin-top: 0;
+      }
+    }
+  }
+
+}
+
+
+.mission{
+  display: -webkit-box;
+  max-width: 100%;
+  margin: 0 auto;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  text-shadow: 0 0 10px rgba(0,0,0,1);
+  @media (max-width: $screen-sm-max) {
+    font-size: 30px;
+    margin-top: 0;
+  }
+  @media (max-width: $screen-xs-max) {
+    font-size: 24px;
+  }
+  .learn-more{
+    float: none;
+    font-size: 16px;
+    margin-left: 12px;
+  }
+}
+
+address {
+  color: #fff;
+}
+.sponsorinfo {
+  padding-right: 15px;
+}
+.sponsor-profile {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  @media (max-width: $screen-md-min) {
+    td {
+      display:block;
+    }
+    .table-bordered {
+      border:0px;
+      border-bottom: 1px solid #dddddd;
+      tbody > tr > td{
+        border-bottom: 0px;
+      }
+    }
+  }
+}
+table.performance-summary {
+  text-align: center;
+}
+.summery-stats {
+  font-size: 2em;
+  color: $brand-primary;
+  margin-bottom: 0;
+}
+.top-causes {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.left-content{
+  h3{
+    margin-top: 10px;
+  }
+
+}
+
+
+.bolder{
+  font-family: "museo_sans500", Helvetica, Arial, sans-serif;
+}
+
+.boldest{
+  font-family: "museo_sans700", Helvetica, Arial, sans-serif;
+}
+
+.init-caps{
+  text-transform: capitalize;
+}
+
+
+.donation-stats {
+  font-size: 3em;
+  color: $brand-primary;
+  margin-bottom: 0;
+}
+.border-right {
+  border-right: 1px solid #e7e7e7;
+}
+.rank-rows {
+  margin: 15px 0;
+  border-top:  1px solid #e7e7e7;
+  text-transform: capitalize !important;
+}
+.rank-rows>div {
+  border-bottom: 1px solid #e7e7e7;
+  padding: 10px;
+}
+.causes {
+  border-top: 1px solid #e7e7e7;
+  padding: 10px 0;
+}
+.white {
+  background-color:#fff;
+  margin-top: -25px;
+  padding-top: 25px;
+}
+.main-background{
+  background-color: $main-background;
+}
+.pointer {
+  background: image-url("pointer.png") no-repeat;
+  width: 100px;
+  height: 30px;
+  margin: 0 auto;
+}
+.pointer-b {
+  background: image-url("pointer-tan.png") no-repeat;
+  width: 100px;
+  height: 30px;
+  margin: 0 auto;
+}
+.min-case {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.follow-button-wrapper{
+  margin-left: 120px;
+  margin-right: 30px;
+}
+
+// Tables -----------------------------------------------------------------------------
+.data-table {
+  /*margin: 15px 0;*/
+  font-size:12px;
+  thead {
+    background-color: $brand-primary;
+    tr {
+      border-bottom-width: 0px !important;
+    }
+  }
+  .empty-tr{
+    border: 6px solid #f5f4ec !important;
+  }
+}
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td{
+  border-bottom-width: 0px !important;
+  font-family: "museo_sans300", Helvetica, Arial, sans-serif;
+  font-size: 9px;
+}
+
+#no-more-tables td{
+  @media (max-width: 800px) {
+    padding-left: 40% !important;
+    background: #e7e7e7; /* Old browsers */
+    background: -moz-linear-gradient(left, #e7e7e7 38%, #ffffff 38%, #ffffff 38%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(38%,#e7e7e7), color-stop(38%,#ffffff), color-stop(38%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #e7e7e7 38%,#ffffff 38%,#ffffff 38%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #e7e7e7 38%,#ffffff 38%,#ffffff 38%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #e7e7e7 38%,#ffffff 38%,#ffffff 38%); /* IE10+ */
+    background: linear-gradient(to right, #e7e7e7 38%,#ffffff 38%,#ffffff 38%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+  }
+}
+.table-bordered > thead > tr > th{
+  border: 0px;
+}
+#no-more-tables td:before{
+  font-family: "museo_sans500", Helvetica, Arial, sans-serif;
+  top: 8px !important;
+}
+
+// Pledge Page Styles -----------------------------------------------------------------
+
+#campaign_countdown {
+  .campaign-timer {
+    font-size: 2.5em;
+    color: $brand-primary;
+    margin-bottom: 0;
+    font-family: "museo_sans700", Helvetica, Arial, sans-serif;
+  }
+  span{
+    margin-left:5px;
+    font-size: 18px;
+  }
+}
+
+.click-btn {
+  margin: 15px 0;
+  padding: 15px;
+  border-top:  1px solid #dddddd;
+  p {
+    padding: 10px 0;
+  }
+}
+.timer-ital {
+  font-style: italic;
+}
+.sidebar-bkg-2 {
+  padding: 0 15px;
+}
+.sidebar-button{
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-top: 15px;
+  @media (max-width: $screen-xs-max) {
+    font-size: 14px;
+  }
+}
+
+.shake-wrap {
+  position: relative;
+  margin-bottom: 35px;
+  img {#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+    width: 50%;
+    border: 1px solid #fff;
+  }
+}
+.shake {
+  background-image: image-url('shake.png');
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin: -85px auto 0;
+  z-index: 100;
+}
+
+.hero-shake{
+  background-image: url(/assets/shake.png);
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  z-index: 999;
+  margin-left: 46%;
+  margin-top: 13%;
+  @media (max-width: $screen-sm-max) {
+    margin-left: 47%;
+    margin-top: 11%;
+  }
+  @media (max-width: $screen-xs-max) {
+    margin-top: 10%;
+  }
+  @media (max-width: 500px) {
+    margin-top: 8%;
+    margin-left: 44%;
+  }
+}
+
+.campaign-banner{
+  background-color: $brand-primary;
+  color: white;
+  padding: 10px 0px;
+  .h1{
+    @media (min-width: $screen-md-min) {
+      margin-left: -76px;
+    }
+  }
+}
+
+.expand-nav{
+  cursor: pointer;
+  background: white;
+  padding: 8px;
+  float: left;
+  margin-top: -10px;
+  -webkit-border-bottom-right-radius: 12px;
+  -webkit-border-bottom-left-radius: 12px;
+  -moz-border-radius-bottomright: 12px;
+  -moz-border-radius-bottomleft: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  img{
+    width: 60px;
+  }
+}
+
+.blue {
+  background-color: $brand-primary;
+  margin-bottom: 30px;
+}
+
+.blue:after {
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: $brand-primary;
+  border-width: 30px;
+  margin-left: -30px;
+}
+
+.green {
+  background-color: $brand-success;
+  margin-bottom: 30px;
+}
+
+.green:after {
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: $brand-success;
+  border-width: 30px;
+  margin-left: -30px;
+}
+
+.pledgebluestripe {
+  &.campaign{
+    padding: 18px 5px;
+    h1{
+      position: absolute;
+      padding: 15px 0px;
+      margin-bottom: 0;
+      padding-top: 20px;
+      font-size: 3em;
+    }
+    .h1{
+      letter-spacing: -1px;
+      line-height: 1.3em;
+      span.second{
+        margin-left: 10px;
+      }
+    }
+    .share{
+      margin-top: 80px;
+    }
+    p{
+      margin:0px;
+      font-size: 1.2em;
+    }
+  }
+  &.pledge{
+    .share{
+      margin-top: -50px;
+      .share-buttons{
+        margin-right: 40px;
+      }
+    }
+    h1{
+      font-size: 3em;
+    }
+  }
+  color: #fff;
+  .share {
+    font-size: 18px;
+    a {
+      font-size: 14px;
+      color: $brand-info;
+      font-style: italic;
+      float: right;
+    }
+    .share-info{
+      margin-right: 10px;
+    }
+  }
+  h1{
+    float: left;
+    width: 85%;
+  }
+}
+
+.visit_our_sps{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.blue-banner-click-button{
+  margin-top: 15px;
+}
+
+.make-pledge {
+  margin-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  h4 {
+    color: $gray-light;
+    font-size: 20px;
+    margin-top: 15px;
+    @media (max-width: $screen-md-min) {
+      text-align: center;
+    }
+  }
+  b {
+    color: black;
+  }
+  .btn {
+    @media (min-width: $screen-sm-min) {
+      font-size: 20px;
+      padding: 10px 35px !important;
+    }
+  }
+}
+.wood {
+  height:650px;
+  margin-bottom: 0;
+  border:0px;
+  background-image: image-url('purple_wood.jpg');
+  background-size: 100% auto;
+  @include background-size(cover);
+  background-position: 50% 0px;
+  @media (max-width: $screen-md-min) {
+    height: 1000px;
+  }
+}
+
+
+.bottom-arrow {
+  background: image-url("bottom-arrow.png") no-repeat;
+  height: 96px;
+  background-size: 100% auto;
+  @include background-size(cover);
+  background-position: 50% 0px;
+}
+
+.never-easier {
+  margin-top: 135px;
+  color: #fff;
+}
+.special-offers {
+  margin: 25px auto;
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+}
+.pledge-story{
+  letter-spacing: 0.5px;
+  h3{
+    margin-top: 0;
+  }
+  p{
+    font-size: 1.1em;
+  }
+  h3, p {
+    @media (max-width: $screen-sm-min) {
+      padding: 0 15px;
+    }
+  }
+}
+
+// Popular Cmapaigns Search Results
+
+.caption h4{
+  margin:0px;
+  padding-right: 20px;
+}
+
+.truncate {
+  /*width: 250px;*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.min-width{
+  width:1%;
+}
+
+.caption h4 a{
+  color:#363636;
+  text-decoration: none;
+}
+.fundraiser_grid{
+  .caption h4 a{
+    color: $link-color;
+  }
+  .buttons{
+    padding: 10px;
+  }
+}
+
+.caption .cause{
+  color:#999999;
+}
+
+
+.caption hr{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+// Campaign Page Styles -----------------------------------------------------------------
+
+.hero-pictures-section{
+  margin-top: 24px;
+}
+
+#campaign_hero_input{
+  font-size: 16px;
+}
+
+#home_video_fr,
+#home_video_sp,
+.video_modal{
+  .modal-body{
+    padding: 0;
+    margin: 0;
+    margin-bottom: -6px;
+  }
+}
+
+.video_button{
+  position: relative;
+  top: 20%;
+  img{
+    cursor: pointer;
+  }
+}
+
+.avatar {
+  img {
+    display: block;
+    width: 100%;
+    height:auto;
+    margin-right: 0;
+    margin: auto;
+  }
+  
+}
+
+.avatar-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 70%;
+  overflow-y: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+  }
+}
+
+.avatar-content{
+  margin-top:10px;
+
+  .caption{
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 10px;
+    clear: both;
+  }
+}
+
+.banner {
+  img {
+    display: block;
+    margin-right: 0;
+    margin: auto;
+  }
+}
+
+.fundraiser-info{
+  margin: 15px 0;
+}
+.fundraiser-name{
+  margin-top: 20px;
+}
+
+.direct_donation_campaign_section{
+  margin: 30px 0px;
+}
+
+.donate_now_button{
+  text-transform: uppercase;
+  font-size: 36px !important;
+  font-weight: bold;
+  padding: 12px 0px !important;
+  @media (max-width: $screen-xs-max) {
+    font-size: 34px !important;
+  }
+}
+
+#donation-widget{
+  &.donation-box{
+    border: 1px solid #ccc;
+    padding: 30px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 3px #ccc;
+    margin: 30px 0px;
+  }
+  
+  h1{
+    font-size: 40px;
+    margin-top: 0;
+  }
+  h2{
+    margin-top: 0;
+    color: $gray-light;
+  }
+  .direct-donation-thermometer{
+    margin-bottom: 50px;
+  }
+
+  #donation-buttons{
+    clear: both;
+    margin-bottom: 10px;
+    button{
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+  }
+  #direct_donation_amount_input{
+    #other-donation-input{
+      padding-left: 25px;
+      margin-bottom: 20px;
+    }
+    #direct_donation_amount{
+      height: 43px;
+    }
+  }
+  .stripe-powered{
+    margin-bottom: 35px;
+    margin-top: 15px;
+  }
+}
+
+
+// Mini Pledges -----------------------------------------------------------------
+.platinum {
+  border: 1px solid $gray-lighter;
+  background: #fff;
+  margin-bottom: 25px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  .buttons{
+    padding: 10px;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  } 
+  .img-thumbnail{
+    padding: 0px;
+    background-color: #ffffff;
+    border: 0px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
+.overlay-effects{
+  .overlay-img {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    &:nth-child(n) {
+      margin-right: 5px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    img {
+      display: block;
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.effect-overlay {
+  display: block;
+  position: absolute;
+  z-index: 20;
+  background: rgba(182, 203, 64, 0.75);
+  overflow: hidden;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-box-shadow:    inset 0 0 30px rgba(0,0,0,.25);
+  -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,.25);
+  box-shadow:         inset 0 0 30px rgba(0,0,0,.25);
+  text-shadow: 0 0 10px rgba(0,0,0,.25);
+  &.blue-bg{
+    background: rgba(8, 193, 220, 0.5);
+  }
+}
+
+a {
+  &.close-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 45px;
+    text-align: center;
+    background-color: #000;
+    cursor: pointer;
+    &.hidden {
+      display: none;
+    }
+  }
+  &.expand {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    text-align: center;
+    color: #fff;
+    line-height: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    height: 100%;
+    &.expand-sm{
+      @media (min-width: $screen-md-min) {
+        text-shadow: 0px 0px 1px $gray;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+    &.expand-md{
+      @media (min-width: $screen-md-min) {
+        line-height: 25px;
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+#effect-1 {
+  .effect-overlay {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    a.expand {
+      left: 0;
+      right: 0;
+      bottom: 50%;
+      margin: 0 auto -30px auto;
+    }
+  }
+  .overlay-img.hover .effect-overlay,
+  .overlay-img:hover .effect-overlay{
+    height: 100%;
+  }
+}
+
+#effect-5 {
+  .effect-overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    a.expand {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      -o-border-radius: 0;
+      border-radius: 0;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+  }
+  .overlay-img.hover .effect-overlay,
+  .overlay-img:hover .effect-overlay {
+    opacity: 1;
+    a.expand {
+      width: 200px;
+      height: 200px;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+  }
+}
+
+#effect-6 {
+  .effect-overlay{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    &.blue-bg.clicked,
+    &.blue-bg{
+      opacity: 1;
+      a.expand{
+        background: rgba(8, 193, 220, 0.5);
+        opacity: 1;
+        padding-top: 15%;
+        padding-left: 10px;
+        padding-right: 10px;
+        .thanks{
+          margin-bottom: 15px;
+          font-size: 36px;
+        }
+      }
+      a.expand-md{
+        padding-top: 10%;
+        .thanks{
+          font-size: 32px;
+        }
+      }
+      a.expand-sm{
+        padding-top: 10%;
+        .thanks{
+          font-size: 20px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+    a.expand {
+      left: 0;
+      right: 0;
+      top: 0;
+      margin: 0 auto;
+      opacity: 0;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+  }
+  // Green overlay
+  .overlay-img.hover .effect-overlay,
+  .overlay-img:hover .effect-overlay{
+    opacity: 1;
+    a.expand {
+      // Top Level
+      padding-top:18%;
+      opacity: 1;
+      .click_to_help{
+        font-size: 36px;
+        margin-bottom: 15px; 
+      }
+      // Medium Level
+      &.expand-sm{
+        @media (min-width: $screen-md-min) {
+          padding-top:18%;
+          .click_to_help{
+            font-size: 20px;
+            margin-bottom: 10px; 
+          }
+        }
+      }
+      // Lowest Level
+      &.expand-md{
+        @media (min-width: $screen-md-min) {
+          padding-top:18%;
+          .click_to_help{
+            font-size: 32px;
+            margin-bottom: 12px; 
+          }
+        }
+      }
+    }
+    &.blue-bg:not(.clicked){
+      opacity: 0;
+      a.expand{
+        opacity: 0;
+      }
+      a.expand-md{
+      }
+    }
+  }
+}
+
+.hero-label{
+  font-size:16px;
+  box-shadow: 1px 1px 0px #999;
+}
+
+// Mini Pledges -----------------------------------------------------------------
+
+.pledges_total {
+  font-size: 18px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.levels {
+  border-top: 1px solid $gray-lighter;
+  padding: 10px;
+
+  span.text-muted {
+    padding-left: 5px;
+  }
+}
+
+.fields-container{
+  .inputs{
+    margin-bottom: 0px;
+  }
+}
+
+.center {
+  text-align: center;
+  padding: 25px;
+}
+.sponsor-levs {
+  margin: 30px 0px;
+
+  .sponsor-pledge {
+    margin-left: 5px;
+    color: $brand-primary;
+    font-size: 18px;
+  }
+
+  @media (max-width: $screen-md-min) {
+    font-size: 18px;
+  }
+}
+.campaign-story {
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+
+  h3{
+    margin-top: 0;
+    font-size: 32px;
+    font-family: "museo_sans700", Helvetica, Arial, sans-serif;
+    @media (max-width: $screen-sm-max) {
+      font-size: 26px;
+    }
+    @media (max-width: $screen-xs-max) {
+      font-size: 22px;
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+  p{
+    font-size: 1.3em;
+  }
+  h3, p {
+    @media (max-width: $screen-sm-min) {
+      padding: 0 15px;
+    }
+  }
+}
+
+// Coupon Styles ---------------------------------------
+.coupon-wrapper{
+  .coupon-actions{
+    position: absolute;
+    right: 120px;
+    z-index: 9999;
+  }
+  .news-actions{
+    position: absolute;
+    z-index: 9999;
+    padding-top: 5px;
+    left: 6.8%;
+    div{
+      margin-bottom: 7px;
+    }
+  }
+}
+.coupons_section{
+  .news-actions{
+    left: 103px;
+  }
+}
+
+.coupon {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: $border-radius-base;
+  box-shadow: 0px 0px 5px #ccc;
+  &.coupon-modal{
+    .label-purple{
+      padding: 6px;
+    }
+    p{
+      font-size: 15px;
+    }
+  }
+  p, h2, h3{
+    margin:0px;
+    padding:0px;
+  }
+  h2, h3{
+    font-family: "museo_sans500", Helvetica, Arial, sans-serif;
+  }
+  h2{
+    margin-bottom: 5px;
+  }
+  .pledge-news-content,
+  .coupon-content{
+    margin:10px 0px;
+  }
+  hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h3{
+    font-size: 17px;
+    color:#333;
+    span {
+      color: #08c1dc;
+    }
+  }
+  .label-purple{
+    position:absolute;
+    padding:10px;
+    margin: -7px;
+    z-index: 99;
+  }
+  img {
+    width: 100%;
+    padding:0px;
+    &.img-thumbnail{
+      border: none;
+    }
+  }
+  .promo-code{
+    font-size: 15px;
+    margin: 10px 0px;
+    display: inline-block;
+  }
+}
+.terms {
+  font-size: $font-size-small;
+  margin-top: 15px;
+  em {
+    font-style: italic;
+    color: $gray-light;
+  }
+}
+#sweeps {
+  position: relative;
+}
+#sweeps-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.share-coupon-block{
+  padding-left: 0;
+  padding-top: 70px;
+}
+ul.share-coupon {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    margin-bottom: 1px;
+  }
+}
+.share-coupon a {
+  display: block;
+  background: image-url('sweeps-share.png') no-repeat;
+  width: 41px;
+  height: 35px;
+}
+.share-coupon a.fb {
+  background-position: 0 0;
+}
+.share-coupon a.twitter {
+  background-position: 0 -36px;
+}
+.share-coupon a.mail {
+  background-position: 0 -72px;
+}
+.share-coupon a.share {
+  background-position: 0 -108px;
+}
+.qr {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 10px;
+  border: 1px solid $gray-lighter;
+}
+.coupon_box {
+  margin-bottom: 20px;
+}
+
+.extra-donation{
+  color: $brand-primary;
+}
+
+// Coupon Edge experimental ---------------------------------------
+
+.coupon-edge {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  background-image: image-url('coupon-edge.png');
+  height: 100%;
+  width: 7px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+// Tab styles ----------------------------------
+.secondary-navbar {
+  background-color: #fff;
+  padding-top: 10px;
+  @include box-shadow(0, 0, 3px, $gray-darker);
+}
+
+.tab-content {
+  margin-top:15px;
+  h3, h4{
+    color: black;
+  }
+}
+
+header {
+  .row{
+    /*margin-left:0px !important;
+    margin-right:0px !important;*/
+  }
+}
+
+.popular {
+  list-style: none;
+  text-align: center;
+  margin: 5px auto;
+  li > a:hover {
+    background: $brand-primary;
+  }
+}
+.popular > li {
+  display: inline-block;
+  float: none;
+  margin: 0 10px;
+  font-size:1em;
+}
+
+.popular > li > a {
+  border-radius: 15px;
+  background: $gray-lighter;
+  color: #fff;
+  padding: 10px 20px;
+  /*width: 30%;*/
+  min-width: 140px;
+}
+.popular > li.active > a, .popular > li.active > a:hover, .popular > li.active > a:focus {
+  background-color: $brand-primary;
+}
+
+.main-home {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+ ul.cats {
+  list-style: none;
+  /*padding: 0 !important;*/
+  li {
+  border-bottom: 1px dotted $gray-light;
+  padding: 5px 0;
+  }
+  a {
+    color: $gray;
+    text-decoration: none;
+  }
+}
+// home box views (temp?) --------------------------------------------------------
+.campaign_grid, .sponsor_grid, .coupon_grid, .fundraiser_grid {
+  padding-left: 5px;
+  padding-right: 5px;
+
+  .thumbnail {
+    background-color: #fff;
+    padding:0px;
+    /*border:0px;*/
+
+    img {
+      /*max-height: 200px;*/
+    }
+  }
+
+  .img-thumbnail{
+    padding: 0px;
+    margin: 0px;
+    border:0px;
+    border-radius: 0px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+  }
+}
+
+// home box views --------------------------------------------------------
+.home-border {
+  border-right: 1px dotted $gray-light;
+}
+.home-box {
+  border: 1px solid $gray-lighter;
+  background: #fff;
+  margin-bottom: 25px;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  } 
+}
+.home-box-info {
+  margin: 0;
+}
+.main-info {
+  padding: 15px;
+  height: 142px;
+}
+.main-info-sponsor {
+  padding: 15px;
+}
+.time {
+  border-top: 1px solid $gray-lighter;
+  padding: 15px;
+  text-align: center;
+}
+.view-all {
+  margin: 25px 0;
+}
+.view-all-border {
+  padding-top: 10px;
+  border-bottom: 1px dotted $gray-light;
+  width: 100%;
+  position: relative;
+}
+.easy-band {
+  background: #ff6c54;
+  text-align: center;
+  h2 {
+    color: #fff;
+    margin-bottom: 25px;
+  }
+  h3 {
+    color: black;
+    margin: 25px 0;
+  }
+}
+
+.circle-campaign, .circle-sp, .circle-raised {
+  border: 20px solid #08c1dc;
+  height: 250px;
+  width: 250px;
+  border-radius:200px;
+  position: relative;
+  display: inline-block;
+  margin: auto 20px;
+}
+
+.circle-campaign {
+  border-color: #ffa755;
+}
+.circle-sp {
+  border-color: #08c1dc;
+}
+.circle-raised {
+  border-color: #462445;
+}
+.totals-centerd {
+  width: 65%;
+  height: 65%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  h4 {
+    color: #ffa755;
+    font-size: 35px;
+    padding: 30px 0 0;
+    margin-bottom: 0;
+  }
+}
+
+.supporters{
+  background-color:white;
+  
+  h3 {
+    color: #999999;
+  }
+  .section-wrapper {
+    margin: 5px 0px 25px;
+    padding:0px;
+  }
+}
+
+
+//Home Sidebar Search form ---------------------------------------------------
+#custom-search-input {
+  margin:0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+#custom-search-input .search-query {
+  padding-right: 3px;
+  padding-right: 4px \9;
+  padding-left: 3px;
+  padding-left: 4px \9;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  border-radius: $border-radius-small;
+}
+
+#custom-search-input button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: relative;
+  left: -28px;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  border-radius: $border-radius-small;
+  color:$gray;
+  z-index: 10;
+}
+
+.search-query:focus + button {
+  z-index: 3;   
+}
+
+// Home Page Styles! ---------------------------------------
+
+.hero-home {
+  border:0px;
+  overflow: hidden;
+  padding-bottom: 0;
+  background-image: url('hero-home.jpg');
+
+  h1 {
+    padding: 0 1em;
+    margin-top: 0;
+    text-shadow: 0px 0px 2px black;
+    font-size: 3em;
+    margin-bottom: 30px;
+  }
+  h2{
+    color: #FFFFFF;
+    text-shadow: 0px 0px 2px black;
+    margin-bottom: 2em;
+  }
+
+  .row.vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media(max-width: $screen-md-min){
+      flex-flow: column;
+      padding-bottom: 1em;
+    }
+  }
+
+  .how_it_works {
+    @media (max-width: 992px) {
+      padding: 2em 0 2em 0;
+    }
+  }
+
+  #how_it_works_btn {
+    display: none;
+    @media (max-width: 992px) {
+      padding: 1em;
+      display: inline;
+    }
+  }
+
+  #home_videos {
+    @media (max-width: 992px) {
+      display: block;
+      height: 0px;
+      h3 {
+        padding: 0 1em 0 1em;
+      }
+    }
+    @media (min-width: 993px) {
+      display: inline;
+      h3 {
+        margin: 0 -2em 0 -2em;
+      }
+    }
+  }
+
+  .intro_video {
+    width: 346px;
+  }
+
+  .wrap {
+    flex-wrap: wrap;
+  }
+
+  .learn-more {
+    padding: 3em 0 2em 0;
+    @media (min-width: 993px) {
+      padding: 0 2em 0 2em;
+    }
+  }
+
+  .centered {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  a.btn {
+    position: relative;
+  }
+
+  .center-play {
+    position: absolute;
+    margin-left: -34px;
+    margin-top: -40px;
+    left: 50%;
+    top: 50%;
+  }
+
+  .play-btn {
+    position: absolute;
+    width: 5em;
+  }
+
+  #banner-video-container{
+    position: relative;
+    z-index: 0;
+    #banner-video-overlay{
+      position: absolute;
+      width: 100%;
+      height: 548px;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+    #banner-video{
+      position: absolute;
+      width: 100%;
+      height: auto;
+
+      @media (max-width: $screen-xs-max){
+        width: auto;
+      }
+    }
+  }
+
+  .home-banner {
+    text-align: center;
+    color: #fff;
+    max-width:100%;
+    padding: 50px 0px;
+    background: rgba(0,0,0,0.15);
+    z-index: 9;
+
+    .sign-up-button{
+      margin-bottom: 3em;
+    }
+    .main-banner{
+      position: relative;
+    }
+
+    #home_carousel{
+      margin-top: 25px;
+      margin-bottom: 2em;
+
+      .slick-slide{
+        margin-right: 10px;
+        img.item{
+          border-radius: 5px;
+          width: 100%;
+        }
+      }
+    }
+
+  }
+}
+
+.cta {
+  margin: 10px 0;
+  h1 {
+    text-transform: uppercase;
+    font-size: 44px;
+  }
+  h3 {
+    color: #fff;
+    font-size: 20px;
+  }
+}
+
+.cake-steps p {
+  margin-top: 8px;
+}
+
+.start-fr {
+  background-image: image-url('fr-campaign-button.png');
+  width: 269px;
+  height: 69px;
+  display: inline-block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.start-sp {
+  background-image: image-url('sp-campaign-button.png');
+  width: 280px;
+  height: 69px;
+  display: inline-block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.button-wrap {
+  width: 549px;
+  margin: 25px auto;
+}
+
+.get-started {
+  font-style: italic;
+}
+.see {
+  font-size: 11px;
+  padding-left: 25px;
+}
+// Tab styles ----------------------------------
+.secondary-navbar {
+  background-color: #fff;
+  @include box-shadow(0, 0, 3px, $gray-light);
+}
+
+/*.popular > li:after {
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: $gray-light;
+  border-width: 6px;
+  margin-left: -6px;
+}*/
+
+.popular {
+  list-style: none;
+  text-align: center;
+  margin-top: 0px;
+  li > a:hover {
+    background: $brand-success;
+  }
+}
+.popular > li {
+  display: inline-block;
+  float: none;
+  margin: 10px 5px;
+}
+.popular > li > a {
+  border-radius: 25px;
+  background: $gray-light;
+  border-top-color: $gray-light;
+  color: #fff;
+}
+.popular > li.active > a, .popular > li.active > a:hover, .popular > li.active > a:focus {
+  background-color: $brand-success;
+}
+
+.popular > li.active:after {
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: $brand-success;
+  border-width: 6px;
+  margin-left: -6px;
+}
+
+.main-home {
+  margin-top: 30px;
+}
+ ul.cats {
+  list-style: none;
+  padding: 25px 0;
+  li {
+  border-bottom: 1px dotted $gray-light;
+  padding: 5px 0;
+  }
+  a {
+    color: $gray;
+    text-decoration: none;
+  }
+}
+// home box views --------------------------------------------------------
+
+.home-border {
+  border-right: 1px dotted $gray-light;
+}
+.home-box {
+  border: 1px solid $gray-lighter;
+  background: #fff;
+  margin-bottom: 25px;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  } 
+}
+.home-box-info {
+  margin: 0;
+}
+.main-info {
+  padding: 15px;
+  height: 142px;
+}
+.main-info-sponsor {
+  padding: 15px;
+}
+.time {
+  border-top: 1px solid $gray-lighter;
+  padding: 15px;
+  text-align: center;
+}
+.view-all {
+  margin: 25px 0;
+}
+.view-all-border {
+  padding-top: 10px;
+  border-bottom: 1px dotted $gray-light;
+  width: 100%;
+  position: relative;
+}
+.easy-band {
+  background: #ff6c54;
+  text-align: center;
+  h2 {
+    color: #fff;
+    margin-bottom: 25px;
+  }
+  h3 {
+    color: black;
+    margin: 25px 0;
+  }
+}
+.center {
+  text-align: center;
+}
+.quotes {
+  background-image: url("success-bkg.jpg");
+
+  .quote:before {
+    color: #fff;
+    content: open-quote;
+    font-family: "minion-pro", Georgia, serif;
+    font-size: 1em;
+  }
+
+  .quote:after {
+    color: #fff;
+    content: close-quote;
+    font-family: "minion-pro", Georgia, serif;
+    font-size: 1em;
+  }
+
+  .quote-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .quote {
+    margin-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+  }
+
+  .author {
+    text-align: left;
+    font-style: italic;
+  }
+
+  @media (min-width: 750px){
+    .rwd-break { display: none; }
+  }
+
+  h4 {
+    color: #fff;
+  }
+}
+
+//Home Sidebar Search form ---------------------------------------------------
+.search-sidebar{
+  background: white;
+  padding-top: 15px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#custom-search-input {
+        margin:0;
+        margin-top: 10px;
+        padding: 0;
+    }
+ 
+    #custom-search-input .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+ 
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+ 
+    #custom-search-input button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -28px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        color:$gray;
+        z-index: 10;
+    }
+ 
+    .search-query:focus + button {
+        z-index: 3;   
+    }
+// Share Block Styles ---------------------------------------------------------------------
+.share-block-wrap {
+  padding: 0 0 35px;
+}
+#share-block {
+  li {
+    list-style: none;
+    color: #fff;
+    display: inline-block;
+    margin-right: 2px;
+  }
+  a {
+    display: block;
+    background: url('share-block.png');
+    height: 35px;
+    color: #fff;
+  }
+}
+ul#share-block {
+  margin: 0;
+  padding: 0;
+}
+#share-block a.faceb {
+  background-position: 0 0;
+  width: 117px;
+  text-align: right;
+  padding: 11px 5px 0 0;
+  font-size: 11px;
+}
+#share-block a.tw {
+  background-position: -123px 0;
+  width: 125px;
+  text-align: right;
+  padding: 11px 5px 0 0;
+  font-size: 11px;
+}
+#share-block a.em {
+  background-position: -253px 0;
+  width: 134px;
+  text-align: right;
+  padding: 11px 5px 0 0;
+  font-size: 11px;
+}
+#share-block a.sh {
+  background-position: -391px 0;
+  width: 89px;
+  text-align: right;
+  padding: 11px 5px 0 0;
+  font-size: 11px;
+}
+
+// Campaign Wizard Styles (shared by pledge wizard) ------------------------------------------------------------------------
+.wizard-rule {
+  border: 1px dotted $gray-light;
+}
+
+.text-muted{
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.campaign-wizard-wrap, .wizard-wrap {
+  margin-bottom: 50px;
+  /*width:90%;*/
+  margin:auto;
+  h3, h4{
+    color: black;
+  }
+  .row{
+    /*margin-bottom:15px;*/
+  }
+  .section-wrapper{
+    /*padding: 25px 0px 0px;
+    margin-top: 30px;*/
+  }
+  .avatar{
+    img{
+      /*height: 230px !important;
+      width: 305px !important;*/
+    }
+  }
+  .banner{
+    img{
+      /*height: 230px !important;
+      width: 305px !important;
+      */
+    }
+  }
+}
+
+.campaign-steps {
+  padding: 20px 50px;
+  @media (min-width: $screen-lg-min) {
+    padding: 20px 100px;
+  }
+  .nav > li > a {
+    padding: 15px 20px;
+  }
+}
+.campaign-name {
+  padding: 0 350px 20px;
+  @media (max-width: $screen-md-min) {
+    padding: 0 50px 20px;
+  }
+}
+
+.campaign-nav {
+  .nav{
+    display:inline-block;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+}
+
+.dropdown {
+  height: 40px !important;
+}
+
+.dropdown-menu{
+  padding: 10px;
+  @media (max-width: $screen-md-min) {
+    float:left !important;
+    width: 100% !important;
+  }
+
+}
+
+.dropdown-menu > li > a {
+    padding: 8px 45px 8px 20px;
+}
+
+#campaign_launch_date_input {
+  /*padding: 10px 0 0;*/
+}
+#campaign_launch_date {
+  width: 49%;
+  float: left;
+  margin-right: 5px;
+}
+#campaign_end_date {
+  width: 49%;
+  margin-right: 5px;
+}
+
+#campaign_scopes_input {
+  text-align: center;
+  margin: 15px 0;
+}
+// Tell Your Story Step ------------------------------------
+.tell-story-wrap {
+  padding: 0 250px;
+}
+#campaign_video_attributes_url {
+  width: 50%;
+}
+#campaign_picture_attributes_banner_input, #pledge_picture_attributes_banner_input {
+  .banner {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+#campaign_picture_attributes_avatar_input {
+  .avatar_input {
+    margin: 0 auto 35px;
+  }
+}
+#campaign_mission_input {
+  margin: 0px auto;
+}
+.p25 {
+  padding-bottom: 25px;
+}
+// Solicit Sponsors Step ------------------------------------
+.solicit-wrap {
+  margin: 20px 0;
+}
+
+
+.btn-lg-choice{
+  padding: 15px;
+  max-width: 250px;
+  margin: 0px;
+  white-space: normal;
+  min-width: 225px;
+  color: #999999;
+  background-color: whitesmoke;
+  border-color: #dddddd;
+  border-radius: 10px;
+}
+.btn-lg-choice:focus {
+  outline:none;
+}
+
+.btn-lg-choice:hover {
+  color:#333333;
+}
+
+.btn-holder{
+  /*width:325px;*/
+  margin: auto;
+}
+
+.toggle-container {
+  margin: 5px;
+  padding: 15px;
+}
+
+.clipboard{
+  margin: 5px 0px;
+}
+
+.btn-mega{
+  font-size: 36px;
+  padding: 10px 50px !important; 
+  position: relative;
+  border: 0 !important;
+  &:focus { outline: 0; }
+  &:hover { top: 2px; }
+  &:active { top: 6px; }
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold !important;
+  
+  @include border-radius(10px);
+  @include transition(all, 50ms, ease);
+  @include tridimensional-btn($brand-warning, 20%);
+}
+
+#sponsors_donations{
+  .btn-selected{
+    color: white;
+    background-color: #07b4cd;
+    border-color: #07a3ba;
+  }
+
+  .toggle-container {
+    display: inline-block;
+  }
+
+  .vertical-divider {
+    span{
+      padding: 25px;
+      display: block;
+    }
+  }
+
+  col-md-1, col-md-2, col-md-4 {
+    margin-left:0px !important;
+    margin-right:0px !important;
+    padding-left:0px !important;
+    padding-right:0px !important;
+  }
+
+  .links{
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .pledge_name, .max_value{
+    display: block;
+    width:100%;
+  }
+  .form-group{
+    display:block;
+    
+  }
+  
+}
+.inline {
+  display:inline-block !important;
+}
+.icon-arrow-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+}
+
+.campaign-preview-box {
+  background: #fff;
+  padding: 10px;
+  position: relative;
+}
+
+.media{
+  margin-bottom: 15px;
+}
+
+.media-body {
+  position: relative;
+  padding-left: 15px;
+  /*min-height: 180px;*/
+  .dates {
+    //position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.media-object {
+  width: 400px;
+}
+
+.media-data{
+  margin-top: 20px;
+}
+.solicit-invite {
+  color: black;
+  margin: 10px 0 50px;
+}
+.solicit-choose {
+  margin: 40px 0;
+  span {
+    margin: 0 10px;
+  }
+}
+// Pledge Wizard ---------------------------------------------------------
+#pledge_amount_per_click_input, #pledge_total_amount_input {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.your-pledge-well {
+  padding: 25px;
+  background-color: #fff;
+  margin-top: 40px;
+}
+.direct-web-well {
+  padding: 25px;
+  margin-top: 0;
+  background-color: #fff;
+}
+.shakeicon {
+  background-image: image-url('shake-lg.png');
+  width: 83px;
+  height: 82px;
+  margin: -60px auto 15px;
+}
+.agree-btn {
+  margin-bottom: 5px;
+}
+.banner-upload {
+  .banner {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+#pledge_picture_attributes_avatar_input {
+  .avatar {
+  margin: 5px auto;
+  }
+  input {
+    margin: 0 auto 25px;
+  }
+}
+.coupons-wrap {
+  .form-group {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+#pledge_news_picture_attributes_qrcode_input,
+#coupon_picture_attributes_qrcode_input{
+  width: 244px;
+  margin: 0 auto;
+  height: 250px;
+}
+
+.form-group{
+  margin-bottom: 5px;
+}
+
+.form-group label, .control-label{
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  display: inherit;
+  margin-top: 15px;
+}
+
+.coupon-uploads {
+  margin-top: 20px;
+}
+.coupon-images {
+  margin: 5px auto;
+  .avatar, .qrcode {
+    margin-bottom: 5px;
+  }
+}
+.remove-coupon {
+    margin-bottom: 10px;
+}
+.share-embed {
+  h3 {
+    color: black;
+  }
+  h4 {
+    margin-top: 25px;
+    color: black;
+  }
+}
+.pledge-badge {
+    width: 50%;
+    margin: 5px auto 10px;
+}
+.pledge-thankyou-well {
+  padding: 10px;
+  background-color: #fff;
+  margin: 30px;
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+    margin: 30px 50px 30px;
+  }
+  @media (min-width: $screen-md-min) {
+    margin: 30px 160px 30px;
+  }
+  .shake{
+    margin: -105px auto 60px;
+  }
+}
+.we-support-outer-wrap {
+  @media (min-width: $screen-md-min) {
+  margin: 0 150px;
+  }
+}
+.pledge-thankyou {
+  width: 450px;
+  height: auto;
+  float: left;
+  img {
+    width: 50%;
+    border: 1px solid #fff;
+  }
+  .sp_fr_names{
+    text-align: center;
+    font-size: 1em;
+    color: $brand-primary;
+    .sp{
+      width: 225px;
+      float: left;
+    }
+    .fr{
+      width: 225px;
+      float: right;
+    }
+  }
+}
+.we-support-text {
+  float: left;
+  margin: 10px 0 0 10px;
+}
+.pledge-logo {
+  max-width: 65%;
+}
+// Signup view -------------------------------------------------
+.first-of-all {
+  margin: 50px auto;
+}
+
+#filters{
+  ul{
+    font-size: 13px;
+    
+    padding-left: 0;
+    padding: 0px;
+    margin-bottom: 0px;
+    li{
+      list-style: none;
+      padding: 4px;
+     
+    .link{
+      width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    }
+    }
+  }
+}
+
+.alert, .alert-transparent{
+  margin:20px;
+}
+
+.banner .alert, .alert-transparent{
+  margin:0px;
+  span{
+    max-width: 1100px;
+    text-align: center;
+    margin: auto;
+  }
+
+  @media (min-width: 1200px){
+    .rwd-break { display: none; }
+  }
+}
+
+.alert-transparent{
+  color: white;
+  background: rgba(0,0,0,0.6);
+  font-size: 1.5em;
+  border-radius: 0;
+}
+
+// Search -------------------------------------------------------
+
+.controls {
+  padding-bottom: 5px;
+  margin-bottom: 0px; /*20px*/
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.modal {
+  white-space: normal;
+
+  .section-wrapper {
+    border-top: 1px dotted #999999;
+    padding: 0px;
+    margin: 15px 0;
+  }
+}
+.modal-body{
+  padding: 35px;
+  margin: 0px 15px;
+  @media (max-width: $screen-md-min) {
+    margin: 15px;
+    padding: 0px;
+  }
+  @media (max-width: $screen-xs-max) {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+.modal-footer{
+  margin-top: 0px;
+}
+
+#click_counted.modal{
+  &.hero_campaign_modal{
+    text-align: left;
+    .modal-body{
+      padding: 15px 30px;
+      margin: 0;
+      background-color: $main-background;
+      a.expand div{
+        font-size: 21px;
+      }
+    }
+  }
+  .modal-body{
+    color: black;
+  }
+}
+.invoice_summary_modal{
+  .modal-title{
+    h3{
+      margin-top: 0;
+    }
+  }
+  .modal-body{
+    padding: 20px;
+    margin: 0;
+    .free-bonus{
+      margin-bottom: 8px;
+      margin-top: 15px
+    }
+  }
+}
+
+.contact-modal{
+  h3{
+    font-family: "museo_sans300", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+  }
+  .modal-body{
+    padding: 20px;
+  }
+  .lead{
+    font-size: 18px;
+  }
+}
+
+// Images Cropping -------------------------------------------------------
+
+#crop_modal{
+  .modal-body{
+    padding: 0;
+    margin: 0;
+    #no_upload{
+      padding: 60px 0px;
+    }
+    .crop-success{
+      padding: 20px;
+    }
+  }
+  .modal-footer{
+    margin-top: 0;
+  }
+  input[type="radio"]{
+    display: none;
+    visibility: hidden;
+  }
+}
+
+#overlay_loading{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('loading.gif') no-repeat center, rgba(255,255,255,0.8);
+  top: 0;
+  .upload-progress{
+    position: relative;
+    top: 43%;
+    font-size: 1.4em;
+    font-weight: bolder;
+  }
+}
+
+.img-thumbnail{
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.uploader {
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  .img-thumbnail{
+    padding: 12px;
+    background-color: #ffffff;
+  }
+
+  .img-loaded {
+    z-index: 2;
+    position: relative;
+  }
+
+  div.camera {
+    content: url("camera-icon.png");
+    position: absolute;
+    top: calc(50% - 80px);
+    left: calc(50% - 65px);
+  }​
+
+  .img-loaded{
+
+  }
+
+  span {
+    background: #08c1dc;
+    border: 1px solid #07abc3;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    position: absolute;
+    top: calc(50% - -25px);
+    color: #ffffff;
+    left: calc(50% - 90px);
+    width: 180px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  input.cloudinary-fileupload {
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  input {
+    filter: alpha(opacity=1);
+    -moz-opacity: 0.01;
+    opacity: 0.01;
+  }
+}
+
+#no-more-tables td{
+  vertical-align: middle;
+}
+
+#no-more-tables th{
+  text-transform: capitalize;
+  color:white;
+}
+
+@media only screen and (max-width: 800px) {
+    /* Force table to not be like tables anymore */
+  #no-more-tables table, 
+  #no-more-tables thead, 
+  #no-more-tables tbody, 
+  #no-more-tables th, 
+  #no-more-tables td, 
+  #no-more-tables tr { 
+    display: block; 
+    border:0px;
+  }
+ 
+  /* Hide table headers (but not display: none;, for accessibility) */
+  #no-more-tables thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+ 
+  #no-more-tables tr { border: 1px solid #ccc; }
+ 
+  #no-more-tables td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+    white-space: normal;
+    text-align:left;
+  }
+ 
+  #no-more-tables td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    text-align:left;
+    font-weight: bold;
+  }
+
+  .min-width {
+    width: 100%;
+  }
+ 
+  /*
+  Label the data
+  */
+  #no-more-tables td:before { content: attr(data-title); }
+}
+
+
+/*  Custom Pill Checkboxes */
+
+.checkbox{
+  display:inline;
+  line-height: 40px;
+  padding-left: 0px;
+}
+.checkbox input[type="checkbox"]{
+  margin-left: 0px;
+} 
+
+.checkbox .checkbox-pill {
+  position: absolute;
+  left: -9999px;
+  z-index:100;
+}
+
+.checkbox new-label {
+  position: relative;
+  padding-left: 10px;
+  cursor: pointer; 
+}
+
+.checkbox .new-label {
+  position: relative;
+  white-space: nowrap;
+  left:0; top: 0px;
+  width: auto; height: auto;
+  background: #d8d8d6;
+  border-radius: 25px;
+  padding:10px 20px 10px 30px;
+  color:#fff;
+  font-size: 14px;
+  transition: all .2s;
+}
+
+.checkbox .new-label:after {
+  content: '✓';
+  position: absolute;
+  top: 0px; left: 10px;
+  font-size: 14px;
+  color: #fff;
+  transition: all .2s;
+}
+
+.checkbox .checked{
+  background:#b5ca41  !important;
+}
+
+.onoffswitch {
+    position: relative; 
+    display: -webkit-inline-box;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none;
+    margin-top: 0px;
+    label {
+      position: relative;
+    }
+    #switch-text{
+      padding: 7px;
+      position: relative;
+      width: 200px;
+      top: -5px;
+    }
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block !important; 
+    overflow: hidden; 
+    cursor: pointer;
+    border-radius: 20px;
+    width: 60px;
+    
+}
+
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "✓";
+    padding-left: 10px;
+    background-color: #B5CA41; color: #FFFFFF;
+}
+
+.onoffswitch-inner:after {
+    content: "X";
+    padding-right: 10px;
+    background-color: #D8D8D6; color: #FFFFFF;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    display: block; width: 15px; height: 15px; margin: 7.5px;
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF; border-radius: 20px;
+    position: absolute; top: 0; bottom: 0; right: 30px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+
+.default {
+  /*height: 70px;*/
+}
+
+.default-img{
+  display:block !important;
+  width:100px !important;
+  height:100px !important;
+}
+
+.meta{
+  display:none;
+}
+
+
+// Image Slider -------------------------------------------------------
+
+.banner-content{
+  /*text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);*/
+  text-align: left;
+  min-height:188px;
+  width: 70%;
+  padding-left: 35px;
+  padding-right: 35px;
+  bottom: 75px;
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: auto;
+
+  @media (max-width: $screen-md-min) {
+    width: 100%;
+    bottom:25px;
+    height:210px;
+    padding-left: 0px;
+    padding-right: 0px;
+    h1{
+      font-size: 30px !important;
+    }
+    h3{
+      font-size: 18px !important;
+    }
+  }
+
+  @media (max-width: $screen-sm-min) {
+    h1{
+      font-size: 26px !important;
+    }
+    h3{
+      font-size: 18px !important;
+    }
+  }
+
+  h1{
+    font-family: "museo_sans700", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  h3{
+    color:white;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  .banner-container{
+    margin-left:30px;
+  }
+  
+}
+
+.primaryBanner{
+   background-color: rgba(8, 193, 220, .9);
+  
+}
+
+.secondaryBanner{
+  background-color: rgba(182, 203, 64, .9);
+}
+
+.primaryBanner:after {
+  left: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-left-color: rgba(8, 193, 220, 0.9);
+  border-width: 94px;
+  top: 0;
+  @media (max-width: $screen-md-min) {
+    display:none;
+  }
+}
+
+.secondaryBanner:after {
+  left: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-left-color: rgba(182, 203, 64, .9);
+  border-width: 94px;
+  top: 0;
+  @media (max-width: $screen-md-min) {
+    display:none;
+  }
+}
+
+#cycler{position:relative; width: 100%;}
+#cycler div{position:absolute;z-index:1}
+#cycler div.active{z-index:3}
+
+#cycler{
+  width: 100%;
+  float: left;
+  display: block;
+
+  .main-banner{
+    span{
+      display: block;
+    }
+    h1{
+      font-size: 38px;
+      margin-top: 45px;
+      text-shadow: 0px 0px 20px $gray;
+    }
+    h3{
+      color: white;
+      margin-top:10px;
+    }
+  }
+  
+  .slide1, .slide2, .slide3{
+    height:500px;
+    margin-bottom: 0;
+    border:0px;
+    background-image: url('hero-home.jpg');
+    background-size: 100% auto;
+    @include background-size(cover);
+    background-position: 50% 0px;
+
+
+    position:absolute;
+    width: 100%;
+    height: 500px;
+    display:block;
+  }
+  .slide1{ background-image: url('hero-home1.jpg'); } 
+  .slide2{ background-image: url('hero-home2.jpg'); }
+  .slide3{ background-image: url('hero-home3.jpg'); }
+}
+
+// Contact Us -------------------------------------------------------
+.contact-stitch{
+  padding: 7px;
+}
+
+.label-overlapped-container{
+  position: relative;
+}
+
+.label.overlapped{
+  position: absolute;
+  z-index: 9;
+  top: 0;
+}
+
+.label-purple{
+  background-color: $brand-purple;
+  &.overlapped{
+    position: absolute;
+    left: 5px;
+    &.big{
+      top: -20%;
+    }
+    &.md{
+      top: -25%;
+    }
+    &.sm{
+      top: -16px;
+      left: -6px;
+    }
+  }
+}
+
+.padding-left-out{
+  padding-left: 0;
+}
+
+// Success Stories -------------------------------------------------------
+
+#boy_scouts {
+  width: 1000px;
+}
+
+#how-it-works-link{
+  margin: 12px 0;
+  a{
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    @media (max-width: $screen-xs-max) {
+      color: $gray;
+    }
+  }
+}
+.no-height{
+  height: 0;
+}
+
+.expander{
+  .details{
+    width: 100%;
+  }
+}
+
+// Tooltip -------------------------------------------------------
+
+.tooltip-title {
+  display: inline-block;
+}
+
+.tooltip-icon {
+  width: 20px;
+}
+
+.tooltip-inner {
+  font-size: 1.4em;
+  max-width: 500px;
+}
+
+.page-spinner{
+  margin: 70px 0;
+}
+
+//######### MOBILE STYLES ###############
+
+// HERO CAMPAIGN
+@media (max-width: $screen-md-min) {
+  .banner.hero .alert,
+  .med-hide{
+    display:none;
+  }
+  .campaign-intro {
+    bottom: 0px !important;
+  }
+  .hero {
+    height: 600px !important;
+    background-position: 50% -100px;
+  }
+  .sidebar-bkg.campaign-sidebar{
+    margin-top: 0;
+  }
+}
+
+//######### MOBILE STYLES ###############
+.pledge_badge,
+.campaign_badge{
+  border: 5px solid $brand-success;
+  border-radius: 5px;
+  padding: 30px;
+  h1{
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .main-button{
+    text-transform: uppercase;
+  }
+  .campaign-stats{
+    font-size: 18px;
+  }
+  .powered_by{
+    .text{
+      font-size: 16px;
+    }
+    .img{
+      img{
+        width: 60px;
+      }
+    }
+  }
+}
+.pledge_badge{
+  .shaking-hands{
+    margin-bottom: 10px;
+    .left-logo{
+      padding-right: 0;
+    }
+    .right-logo{
+      padding-left: 0;
+    }
+  }
+  .main-button{
+    font-size: 24px !important;
+    margin-top: 8px;
+    @media (max-width: $screen-xs-max) {
+      margin-top: 20px;
+    }
+  }
+  h1{
+    @media (max-width: $screen-xs-max) {
+      font-size: 30px;
+    }
+  }
+  h3{
+    @media (max-width: 500px) {
+      font-size: 18px;
+    }
+  }
+}
