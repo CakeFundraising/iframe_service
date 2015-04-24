@@ -5,6 +5,7 @@ class BadgesController < ApplicationController
 
   def pledge
     @pledge = Pledge.find(params[:id]).decorate
+    @campaign = @pledge.campaign.decorate
   end
 
 end
