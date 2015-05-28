@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'font_assets'
 
 gem 'slim'
 gem 'slim-rails'
@@ -15,6 +16,7 @@ gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'draper'
 gem 'cloudinary'
 gem 'money-rails', '~> 1.3.0'
+
 
 #Storage
 gem 'pg'
